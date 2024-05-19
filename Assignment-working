@@ -1,0 +1,31 @@
+import pathlib
+import textwrap
+import google.generativeai as genai
+from IPython.display import display
+from IPython.display import Markdown
+
+def to_markdown(text):
+  text = text.replace('•', '  *')
+  return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+
+import os
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+genai.configure(api_key=GOOGLE_API_KEY)
+
+for m in genai.list_models():
+  if 'generateContent' in m.supported_generation_methods:
+    print(m.name)
+
+model = genai.GenerativeModel('gemini-pro')
+
+#Assignment Topic:
+#Character Monologue Generation: Construct a prompt to generate a monologue from the perspective of a fictional character,
+#expressing their thoughts, emotions, and motivations.#
+
+# Prompt 1
+response = model.generate_content(""""You are one of the best movie writers, who can create engaging and imaginative movie scripts, 
+                                    character monologues and dialogues across various genres, such as adventure, romance, mystery,comedy
+                                  or science fiction. Develop interesting characters, vivid settings, and intriguing plotlines 
+                                  that keep readers entertained and emotionally invested. My first request is to create a monologue 
+                                  from the perspective of a fictional character, expressing their thoughts, emotions, and 
+                                  motivations.""")
