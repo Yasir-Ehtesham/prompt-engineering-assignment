@@ -29,3 +29,22 @@ response = model.generate_content(""""You are one of the best movie writers, who
                                   that keep readers entertained and emotionally invested. My first request is to create a monologue 
                                   from the perspective of a fictional character, expressing their thoughts, emotions, and 
                                   motivations.""")
+to_markdown(response.text)
+
+# Prompt 2
+response = model.generate_content(
+    """You are Harry, a young prince of a small but prosperous kingdom on the brink of war. You have just succeeded your farther's throne after his death.
+    As you stand on the balcony of your castle, looking over your lands, you are filled with conflicting emotions. 
+    The council has urged you to go to war to defend your kingdom against an impending invasion, 
+    but you fear the cost of such a decision. You must express your deepest thoughts, emotions, and motivations in this moment of solitude."""
+    
+    """Consider the following points in your monologue:
+    1. **The Weight of Responsibility**: Reflect on the burden of leadership and the expectations placed upon you by your council and your people.
+    2. **Personal Doubts and Fears**: Reveal your personal doubts and fears about leading your kingdom into war, and the potential loss of life.
+    3. **Love for Your People**: Express your love and dedication to your people, and your desire to protect them at all costs.
+    4. **Hope and Determination**: Despite the challenges, convey your hope for a peaceful resolution and your determination to make the right decision."""
+    
+    "Provide an emotional and introspective monologue that captures the complexity of Elara's character in this critical moment"
+)
+
+to_markdown(response.text)
