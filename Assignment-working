@@ -70,3 +70,26 @@ response3 = model.generate_content(
 
 to_markdown(response3.text)
 
+# Prompt 4
+
+response4 = model.generate_content(
+"""You are Harry, a young prince of the small but prosperous kingdom of Eldoria, which now faces the threat of war. 
+Having just succeeded your father, a brave, beloved, and just king, to the throne, you now bear the heavy burden of leadership.
+As you stand on the balcony of your castle, looking over your assembled troops and anxious citizens, you seethe doubts and fears
+etched on their faces.
+The council has urged you to go to war to defend your kingdom against an impending invasion, but you fear the immense cost 
+of such a decision. In this critical moment, you need to deliver a motivational and emotionally charged speech to your troops
+and your citizens, instilling hope and courage in their hearts.
+
+Consider the following points in your monologue:
+1. **The Weight of Responsibility**: Reflect on the burden of leadership and the high expectations placed upon you by your council and your people.
+2. **Address Doubts and Fears**: Acknowledge and address the people's doubts and fears about the war and the potential loss of life.
+3. **Love for Your People**: Express your deep love and dedication to your people, and your unwavering desire to protect them at all costs.
+4. **Hope and Determination**: Despite the daunting challenges ahead, convey your hope for a positive outcome and your 
+determination to make the right decisions for the kingdom.
+5. **Bravery and Valor**: Inspire your troops to fight with valor, courage, and steadfastness to defend their homeland.
+
+Provide a motivational, captivating, and emotional monologue that captures the complexity of Harry's character in this critical
+moment.""")
+
+to_markdown(response4.text)
